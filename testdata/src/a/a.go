@@ -1,7 +1,9 @@
 package a
 
-func f() {
-	// The pattern can be written in regular expression.
-	var gopher int // want "pattern"
-	print(gopher)  // want "identifier is gopher"
+import "fmt"
+
+var ErrNotFound = fmt.Errorf("not found") // want "do not use Errorf at the package level"
+
+func f() error {
+	return fmt.Errorf("not found")
 }
